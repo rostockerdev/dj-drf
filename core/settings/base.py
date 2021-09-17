@@ -127,3 +127,13 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 ###########################################
 
 MESSAGE_TAGS = {messages.ERROR: "danger"}
+
+###########################################
+#         REST AUTHENTICATION             #
+###########################################
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.BasicAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+    ]
+}
