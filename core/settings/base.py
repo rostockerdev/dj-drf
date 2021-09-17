@@ -12,9 +12,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 ###########################################
 #     APPLICATION CONFIGURATION           #
 ###########################################
-LOCAL_APPS = []
+LOCAL_APPS = [
+    "api.apps.ApiConfig",
+]
 
-THIRDPARTY_APPS = []
+THIRDPARTY_APPS = [
+    "rest_framework",
+]
 
 
 INSTALLED_APPS = [
