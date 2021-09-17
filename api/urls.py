@@ -7,11 +7,18 @@ from api.views.authtoken_api import AuthTokenArticleApi
 from api.views.classbas_api import ArticleDetailApiView, ArticleListApiView
 from api.views.funbased_api import art_detail_fun_api, art_list_fun_api
 from api.views.generic_api import ArtilceListGenericApi
+from api.views.genericviewset_api import GenViewsetArticleApi
 from api.views.regular_views import article_detail, article_list
 from api.views.viewset_api import ViewsetArticleApi
 
-router = DefaultRouter()
-router.register("articlereg", ViewsetArticleApi, basename="articlereg")
+viewsetrouter = DefaultRouter()
+viewsetrouter.register("articleviewset", ViewsetArticleApi, basename="articleviewset")
+
+generic_viewsetrouter = DefaultRouter()
+generic_viewsetrouter.register(
+    "genericarticleviewset", GenViewsetArticleApi, basename="genericarticleviewset"
+)
+
 app_name = "api"
 
 urlpatterns = [
@@ -43,6 +50,8 @@ urlpatterns = [
         AuthArticleApi.as_view(),
         name="authenticate-article-list",
     ),
-    path("viewset_api/", include(router.urls)),
-    path("viewset_api/<int:pk>/", include(router.urls)),
+    path("viewset_api/", include(viewsetrouter.urls)),
+    path("viewset_api/<int:pk>/", include(viewsetrouter.urls)),
+    path("generic_viewset_api/", include(generic_viewsetrouter.urls)),
+    path("generic_viewset_api/<int:pk>/", include(generic_viewsetrouter.urls)),
 ]
