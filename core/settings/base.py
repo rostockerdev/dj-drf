@@ -18,6 +18,7 @@ LOCAL_APPS = [
 
 THIRDPARTY_APPS = [
     "rest_framework",
+    "rest_framework.authtoken",
 ]
 
 

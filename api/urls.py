@@ -1,6 +1,7 @@
 from django.urls import path
 
 from api.views.auth_api import AuthArticleApi
+from api.views.authtoken_api import AuthTokenArticleApi
 from api.views.classbas_api import ArticleDetailApiView, ArticleListApiView
 from api.views.funbased_api import art_detail_fun_api, art_list_fun_api
 from api.views.generic_api import ArtilceListGenericApi
@@ -36,5 +37,10 @@ urlpatterns = [
         "authenticate_api/<int:pk>/",
         AuthArticleApi.as_view(),
         name="authenticate-article-list",
+    ),
+    path(
+        "authtoken_api/<int:pk>/",
+        AuthTokenArticleApi.as_view(),
+        name="authtoken-article-list",
     ),
 ]
