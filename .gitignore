@@ -1,0 +1,32 @@
+# General
+*.log
+*.pdf
+*.png
+
+# IDE
+.idea/
+.vscode/
+
+# Python
+*.pyc
+__pycache__/
+
+# Virtualenv
+venv/
+
+# Databases
+*.sqlite3
+
+# Migrations
+migrations/
+
+# Javascript
+node_modules/
+build
+
+# Environment Variables
+.env 
+
+# Assets
+assets/
+requirements.txt
